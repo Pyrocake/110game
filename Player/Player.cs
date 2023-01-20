@@ -76,11 +76,6 @@ public class Player : KinematicBody2D
 	}
 
 	public void attackState(float delta) {
-		//Vector2 cursorPos = GetLocalMousePosition();
-		//if (animationState.GetCurrentNode() != "Attack") {
-		//	animationTree.Set("parameters/Attack/blend_position", cursorPos);
-		//}
-
 		animationState.Travel("Attack");
 		
 		velocity = velocity.MoveToward(Vector2.Zero, FRICTION * delta);
