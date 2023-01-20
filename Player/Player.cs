@@ -51,7 +51,7 @@ public class Player : KinematicBody2D
   	}
 
 	public void moveState(float delta) {
-		var inputVector = new Vector2();
+		Vector2 inputVector = new Vector2();
 		inputVector.x = Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left");
 		inputVector.y = Input.GetActionStrength("ui_down") - Input.GetActionStrength("ui_up");
 		inputVector = inputVector.Normalized();
