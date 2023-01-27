@@ -573,6 +573,7 @@ tile_data = PoolIntArray( -65530, 0, 0, -65529, 0, 1, -65528, 0, 1, -65527, 0, 1
 position = Vector2( 176, 80 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
+current = true
 
 [node name="Bushes" type="YSort" parent="YSort"]
 

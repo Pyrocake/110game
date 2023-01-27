@@ -47,7 +47,6 @@ public class Player : KinematicBody2D
 				attackState(delta);
 				break;
 		}
-		//moveState(delta);
   	}
 
 	public void moveState(float delta) {
@@ -57,15 +56,19 @@ public class Player : KinematicBody2D
 		inputVector = inputVector.Normalized();
 
 		if (inputVector != Vector2.Zero){
+			//speeds up, akin to friction
 			velocity = velocity.MoveToward(inputVector * MAX_SPEED, ACCELERATION * delta);
 
+			//Sets the directionality of anims in Godot
 			animationTree.Set("parameters/Idle/blend_position", inputVector);
 			animationTree.Set("parameters/Run/blend_position", inputVector);
 			animationTree.Set("parameters/Attack/blend_position", inputVector);
-
+			//Set state machine
 			animationState.Travel("Run");
 		} else {
+			//slows down, akin to friction
 			velocity = velocity.MoveToward(Vector2.Zero, FRICTION * delta);
+			//Set state machine to idle if not moving
 			animationState.Travel("Idle");
 		}
 		velocity = MoveAndSlide(velocity);
@@ -82,6 +85,7 @@ public class Player : KinematicBody2D
 		velocity = MoveAndSlide(velocity);
 	}
 
+	//Referenced by Godot itself
 	public void attackDone() {
 		state = States.MOVE;
 	}
