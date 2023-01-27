@@ -600,14 +600,15 @@ position = Vector2( 280, 128 )
 [node name="Grass" parent="YSort/Grass" instance=ExtResource( 8 )]
 position = Vector2( 80, 96 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Bat (ChatGPT)" type="Node2D" parent="."]
 position = Vector2( 144, 80 )
+z_index = 2
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
-speed = 10.0
+speed = 50.0
 
-[node name="Sprite" type="Sprite" parent="Node2D"]
+[node name="Sprite" type="Sprite" parent="Bat (ChatGPT)"]
 texture = ExtResource( 9 )
 hframes = 5
